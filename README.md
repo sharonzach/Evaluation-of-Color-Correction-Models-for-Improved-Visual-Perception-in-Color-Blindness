@@ -1,11 +1,12 @@
 # Color-correction-for-color-blind-people-using-daltonisation-methods-in-MATLAB
 This project provides a MATLAB implementation for simulating color blindness and applying daltonization to improve color perception for color-deficient individuals. The tool supports three types of color blindness: Deuteranopia, Protanopia, and Tritanopia.
 
-Features
-Load Image: Select and load an image from your local system.
-Simulate Color Blindness: Generate a version of the image as perceived by color-deficient individuals.
-Daltonization: Enhance the image to make it more distinguishable for color-blind users, with adjustable intensity.
-User-Friendly GUI: Includes an interactive slider to adjust the daltonization intensity in real-time.
+Features:
+
+1. Load Image: Select and load an image from your local system.
+2. Simulate Color Blindness: Generate a version of the image as perceived by color-deficient individuals.
+3. Daltonization: Enhance the image to make it more distinguishable for color-blind users, with adjustable intensity.
+4. User-Friendly GUI: Includes an interactive slider to adjust the daltonization intensity in real-time.
 
 Prerequisites
 MATLAB: R2021a or newer is recommended.

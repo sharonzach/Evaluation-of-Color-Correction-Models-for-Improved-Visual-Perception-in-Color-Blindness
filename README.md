@@ -1,49 +1,74 @@
-# Color-correction-for-color-blind-people-using-daltonisation-methods-in-MATLAB
-This project provides a MATLAB implementation for simulating color blindness and applying daltonization to improve color perception for color-deficient individuals. The tool supports three types of color blindness: Deuteranopia, Protanopia, and Tritanopia.
+# Visibility Enhancement for Color Blind Individuals
 
-Features:
+This project presents a comparative analysis of three methods for enhancing visibility for individuals with color blindness: **Daltonization**, **Veinot Correction**, and **Wavelet-Based Correction**. The methods are tested using a random image, with performance evaluated through **Mean Squared Error (MSE)** and **Structural Similarity Index (SSIM)** metrics.
 
-1. Load Image: Select and load an image from your local system.
-2. Simulate Color Blindness: Generate a version of the image as perceived by color-deficient individuals.
-3. Daltonization: Enhance the image to make it more distinguishable for color-blind users, with adjustable intensity.
-4. User-Friendly GUI: Includes an interactive slider to adjust the daltonization intensity in real-time.
 
-Prerequisites
-MATLAB: R2021a or newer is recommended.
-Toolboxes: None required (uses standard MATLAB functions).
-Image Files: Any color image in .jpg, .jpeg, .png, or .bmp formats.
 
-How to Use
+## Overview
+Color blindness affects millions of individuals globally, reducing their ability to perceive colors accurately. This MATLAB project implements and compares three correction techniques to enhance the visual experience for people with different types of color vision deficiencies (Deuteranopia, Protanopia, Tritanopia). 
+
+By applying these techniques, this project provides insights into improving accessibility for the color-blind community.
+
+---
+
+## Features
+- Simulates color blindness for three common types:
+  - **Deuteranopia** (Red-Green blindness)
+  - **Protanopia** (Red deficiency)
+  - **Tritanopia** (Blue-Yellow blindness)
+- Implements three correction techniques:
+  1. **Daltonization**: Adjusts colors for better perception by simulating and correcting color blindness.
+  2. **Veinot Correction**: Applies specific transformation and correction matrices.
+  3. **Wavelet-Based Correction**: Enhances visibility by modifying wavelet coefficients.
+- Provides side-by-side visual comparisons:
+  - Original Image
+  - Simulated Image
+  - Corrected Image
+- Quantitative evaluation using:
+  - **MSE**: Measures pixel-wise differences between original and corrected images.
+  - **SSIM**: Evaluates perceptual similarity.
+
+---
+
+## Methods
+
+### 1. Daltonization
+Simulates color blindness by transforming the color space using pre-defined matrices. A correction step then adjusts colors for improved visibility.
+
+### 2. Veinot Correction
+Uses scientific models with specific transformation and correction matrices tailored for each type of color blindness. 
+
+### 3. Wavelet-Based Correction
+Applies wavelet decomposition to modify and enhance specific frequency components, improving contrast and color differentiation.
+
+---
+
+## Evaluation
+- **Mean Squared Error (MSE)**: Lower values indicate closer resemblance to the original image.
+- **Structural Similarity Index (SSIM)**: Higher values represent better perceptual similarity.
+
+The results are displayed in a GUI, showcasing the MSE and SSIM values alongside visual comparisons of the images.
+
 Clone the repository:
-git clone https://github.com/your-username/color-blindness-simulation.git
-cd color-blindness-simulation
-Open MATLAB and navigate to the project directory.
+   ```bash
+   git clone https://github.com/yourusername/visibility-enhancement-color-blind.git
+   cd visibility-enhancement-color-blind
+```
+Open MATLAB.
 
-Run the main function:
+Install required toolboxes (Image Processing Toolbox).
 
-matlab
-Copy code
-simulate_and_daltonize
-Follow these steps in the GUI:
+Run the desired script to test the correction methods.
+System Requirements
+1. MATLAB (tested on R2023a or newer)
+2. Image Processing Toolbox
+3. Compatible with Windows, macOS, and Linux.
 
-1. Select an image file when prompted.
-2. Choose the type of color blindness to simulate: Deuteranopia, Protanopia, or Tritanopia.
-3. Adjust the Daltonization Intensity slider to apply corrections and enhance the image.
-   
-Example Workflow
-Original Image: Load an RGB image from your system.
-Simulate Color Blindness: View the image as perceived by individuals with a specific type of color blindness.
-Daltonized Image: Use the slider to adjust the intensity of the daltonization effect, making colors more distinguishable for color-blind users.
-
-Functions Overview
-1. simulate_and_daltonize: Main script for selecting an image and running the GUI.
-2. simulate_color_blindness: Simulates color blindness by applying transformations to the LMS color space.
-3. daltonize_image: Enhances the image using the calculated error from the simulation to apply color corrections.
-4. transform_colorspace: Helper function to convert between RGB, LMS, and other color spaces.
-5. updateDaltonization: Callback function for the slider to update the daltonized image in real-time.
-   
-Future Enhancements
-Add support for batch processing of images.
-Integrate additional algorithms for more accurate daltonization.
-Save daltonized images for external use.
-Extend to handle videos for real-time applications.
+Project Structure
+```
+visibility-enhancement-color-blind/
+├── daltonisation.m            # Daltonization method implementation
+├── veinot.m               # Veinot correction method implementation
+├── wavelet.m             # Wavelet-based correction method implementation
+├── README.md              # Project documentation
+```
